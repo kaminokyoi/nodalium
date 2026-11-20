@@ -1,11 +1,11 @@
-import Image from "next/image";
-import { Button } from '@/components/ui/button'
+import { db } from "@/lib/db"
 
-export default function Home() {
+export default async function Home() {
+    const user = await db.user.findMany();
   return (
       <>
         <div className="min-h-screen min-w-screen flex items-center justify-center">
-            <Button>Click Me</Button>
+            {JSON.stringify(user)}
         </div>
       </>
   );
