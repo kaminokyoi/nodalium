@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:18-alpine3.23
+    container_name: nodalium-data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: azerty1234
+      POSTGRES_DB: nodalium
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/
+
+
+volumes:
+  pgdata:
